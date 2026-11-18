@@ -38,8 +38,19 @@ Exemple:
 
 
 def find_max(lst):
-    # Write here your code
-    pass
+
+    if not all(isinstance(x, (int, float)) for x in lst) or len(lst)<=0:
+        raise ValueError("MENSAJE DE ERROR")
+        
+    #caso base    
+    if len(lst)==1:
+        resultado = lst[0]
+            
+    #recursividad
+    else: #len(lst)>1
+        resultado = max(lst[0], find_max(lst[1:]))
+
+    return resultado
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
