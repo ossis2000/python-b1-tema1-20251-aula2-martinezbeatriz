@@ -35,8 +35,19 @@ Exemple:
 """
 
 def obtain_max(list_numbers):
-    # Write here your code
-    pass
+    
+    if (type(list_numbers[0]) != int) or (list_numbers[0] < 0):
+        raise ValueError("MENSAJE DE ERROR")
+        
+    #caso base    
+    if len(list_numbers)==1:
+        resultado = list_numbers[0]
+            
+    #recursividad
+    else: #len(list_numbers)>1
+        resultado = max(list_numbers[0], obtain_max(list_numbers[1:]))
+
+    return resultado
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
