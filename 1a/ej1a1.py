@@ -40,8 +40,18 @@ Exemple:
 '''
 
 def fibonacci(fibonacci_number):
-    # Write here your code
-    pass
+    if (type(fibonacci_number) != int) or (fibonacci_number < 0):
+        raise ValueError(
+                "Número no valido. Debe ser un entero mayor que 0"
+            )
+    elif fibonacci_number == 0:
+        resultado = 0
+    elif fibonacci_number == 1:
+        resultado = 1
+    else:
+        resultado = fibonacci(fibonacci_number-1) + fibonacci(fibonacci_number-2)
+    return resultado
+
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
