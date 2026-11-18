@@ -32,8 +32,14 @@ Exemple:
 '''
 
 def invert_text(text_chain:str):
-    # Write here your code
-    pass
+    if len (text_chain) == 1:
+        resultado = text_chain[0]
+    elif len (text_chain) == 2:
+        resultado = text_chain[1] + text_chain[0]
+    else:
+        resultado = text_chain[-1] + invert_text(text_chain[:-1])
+    return resultado
+
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
