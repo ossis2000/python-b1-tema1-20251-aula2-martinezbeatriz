@@ -41,8 +41,20 @@ Exemple:
 
 
 def is_palindrome(word):
-    # Write here your code
-    pass
+    
+    if len (word) <= 1:
+        resultado = True
+    elif len (word) == 2:
+        if word[0] == word[1]:
+            resultado = True
+        else:
+            resultado = False
+    else:
+        if word[0] == word[-1]:
+            resultado = True and is_palindrome(word[1:len(word)-1])
+        else:
+            resultado = False
+    return resultado
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
