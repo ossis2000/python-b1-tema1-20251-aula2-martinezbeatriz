@@ -42,8 +42,26 @@ Exemple:
 '''
 
 def sum_odd_numbers(list_numbers):
-    # Write here your code
-    pass
+    
+    if (type(list_numbers[0]) != int) or (list_numbers[0] < 0):
+        raise ValueError("MENSAJE DE ERROR")
+        
+    #caso base    
+    if len(list_numbers)==1:
+        if list_numbers[0] % 2 != 0:
+            resultado = list_numbers[0]
+        else:
+            resultado = 0
+            
+    #recursividad
+    else: #len(list_numbers)>1
+        if list_numbers[0] % 2 != 0:
+            resultado = list_numbers[0] + sum_odd_numbers(list_numbers[1:])
+        else: #list_numbers[0] % 2 == 0:
+            resultado = sum_odd_numbers(list_numbers[1:])
+
+    return resultado
+
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
