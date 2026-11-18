@@ -36,7 +36,7 @@ Exemple
 
 
 def invert_list(lst):
-    if len (lst) == 1:
+    if len (lst) <= 1:
         resultado = lst
     elif len (lst) == 2:
         resultado = [lst[1], lst[0]]
