@@ -46,8 +46,19 @@ Exemple:
 
 
 def mult_recursive(value, times):
-    # Write here your code
-    pass
+    
+    if (type(value) != int) or (type(times) != int) or (times <= 0):
+        raise ValueError("MENSAJE DE ERROR")
+        
+    #caso base    
+    if times==1:
+        resultado = value
+            
+    #recursividad
+    else: 
+        resultado = value + mult_recursive(value, times-1)
+
+    return resultado
 
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script
