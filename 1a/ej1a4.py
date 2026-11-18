@@ -34,8 +34,18 @@ Exemple:
 '''
 
 def count_vowels(text_chain:str):
-    # Write here your code
-    pass
+    vocales = ['a','e','i','o','u','A','E','I','O','U']
+    if len (text_chain) == 0:
+        raise ValueError("Cadena vacía")
+    elif len (text_chain) == 1:
+        if text_chain[0] in vocales:
+            resultado = 1
+        else:
+            resultado = 0
+    else:
+        resultado = count_vowels(text_chain[0]) + count_vowels(text_chain[1:])
+    return resultado
+
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
