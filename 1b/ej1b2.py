@@ -66,8 +66,10 @@ Exemple:
 import math
 
 def calculate_angle(angle):
-    # Write here your code
-    pass
+    if (type(angle) != int):
+        raise ValueError("MENSAJE DE ERROR")
+    else:
+        return round(math.sin(math.radians(angle)),2)
 
 # Si quieres probar tu código, descomenta las siguientes líneas y ejecuta el script 
 # Si vols provar el teu codi, descomenta les línies següents i executa l'script
